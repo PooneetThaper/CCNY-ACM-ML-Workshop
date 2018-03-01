@@ -90,7 +90,7 @@ def main():
     # Number of hidden layers
     numHiddenLayers=1
     # Number of nodes in each hidden layer
-    numNeuronsHidden=3
+    numNeuronsHidden=4
 
     print(X)
     print(y)

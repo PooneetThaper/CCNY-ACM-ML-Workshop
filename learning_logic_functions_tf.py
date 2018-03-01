@@ -58,10 +58,10 @@ out_2 = tf.nn.sigmoid(logits_2)
 #       Note:   Other optimizers are available that add a variety of optimizations and
 #               tricks such as adaptive learning rate, learning rate decay, and momentum.
 
-# loss = tf.reduce_mean(tf.squared_difference(labels_placeholder, out_2), name="Mean_Squared_Error")
-loss = tf.nn.sigmoid_cross_entropy_with_logits(labels = labels_placeholder, logits = logits_2)
-# train = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
-train = tf.train.AdamOptimizer(learning_rate).minimize(loss)
+loss = tf.reduce_mean(tf.squared_difference(labels_placeholder, out_2), name="Mean_Squared_Error")
+# loss = tf.nn.sigmoid_cross_entropy_with_logits(labels = labels_placeholder, logits = logits_2)
+train = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
+# train = tf.train.AdamOptimizer(learning_rate).minimize(loss)
 
 # Define the TensorFlow session and initialize variables
 sess = tf.Session()
