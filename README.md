@@ -1,1 +1,2 @@
-# CCNY-ACM-ML-Workshop
+# CCNY ACM Intro to Machine Learning Workshop
+This repository contains sample code for the Intro to Machine Learning Workshop on Thursday, March 1st. Here you will find an implementation of a neural network from scratch as well as an implementation written using the TensorFlow machine learning framework. Both of the above code samples attempt to learn the functional mapping from all combinations of two boolean values to their resulting AND, OR, and XOR outputs using simple feed-forward neural networks.
