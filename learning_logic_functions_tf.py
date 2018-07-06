@@ -48,16 +48,18 @@ bias_2 = tf.Variable(tf.truncated_normal([3], stddev=0.1), name="Bias_2")
 logits_2 = tf.matmul(out_1, weights_2) + bias_2
 out_2 = tf.nn.sigmoid(logits_2)
 # Note: Sigmoid activation works well for binary classification as in this case
-#       For multiclass classification, you should likely used
+#       For multiclass classification, you should likely use softmax instead
 
 # Optimization
 # loss: Mean Squared Error (MSE)
 #       Note:   We are considering this a classification problem but using MSE.
-#               Using cross entropy would help with training.
+#               Using cross entropy may help with training but MSE would not really be 
+#               "wrong" and was chosen for simplicity.
 # optimizer: Gradient Descent Optimizer
 #       Note:   Other optimizers are available that add a variety of optimizations and
 #               tricks such as adaptive learning rate, learning rate decay, and momentum.
 
+# Comments below provide alternatives for the loss and optimizer. Try them out and see which one works better.
 loss = tf.reduce_mean(tf.squared_difference(labels_placeholder, out_2), name="Mean_Squared_Error")
 # loss = tf.nn.sigmoid_cross_entropy_with_logits(labels = labels_placeholder, logits = logits_2)
 train = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
